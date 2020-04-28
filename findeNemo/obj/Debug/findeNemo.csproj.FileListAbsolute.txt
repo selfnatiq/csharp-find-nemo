@@ -1,0 +1,10 @@
+C:\_C#\findeNemo\findeNemo\bin\Debug\findeNemo.exe.config
+C:\_C#\findeNemo\findeNemo\bin\Debug\findeNemo.exe
+C:\_C#\findeNemo\findeNemo\bin\Debug\findeNemo.pdb
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.csprojAssemblyReference.cache
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.Properties.Resources.resources
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.csproj.GenerateResource.cache
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.csproj.CoreCompileInputs.cache
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.exe
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.pdb
+C:\_C#\findeNemo\findeNemo\obj\Debug\findeNemo.findeNemo.resources
