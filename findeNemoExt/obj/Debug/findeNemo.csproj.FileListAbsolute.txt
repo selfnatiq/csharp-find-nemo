@@ -37,3 +37,4 @@ C:\_C#\findeNemo\findeNemoExt\obj\Debug\findeNemo.csproj.GenerateResource.cache
 C:\_C#\findeNemo\findeNemoExt\obj\Debug\findeNemo.csproj.CoreCompileInputs.cache
 C:\_C#\findeNemo\findeNemoExt\obj\Debug\findeNemo.exe
 C:\_C#\findeNemo\findeNemoExt\obj\Debug\findeNemo.pdb
+C:\_C#\findeNemo\findeNemoExt\obj\Debug\findeNemo.csprojAssemblyReference.cache

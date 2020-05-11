@@ -146,7 +146,7 @@
             // 
             this.lblInfo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lblInfo.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.lblInfo.Location = new System.Drawing.Point(11, 9);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfo.Name = "lblInfo";
@@ -191,7 +191,12 @@
             this.Controls.Add(this.lblPunkte);
             this.Controls.Add(this.pnlBlocks);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(608, 752);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(608, 752);
             this.Name = "findeNemo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finde Nemo";
             this.Load += new System.EventHandler(this.findeNemo_Load);
             this.ResumeLayout(false);

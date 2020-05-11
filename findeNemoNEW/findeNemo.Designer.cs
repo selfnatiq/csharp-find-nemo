@@ -191,7 +191,12 @@
             this.Controls.Add(this.lblPunkte);
             this.Controls.Add(this.pnlBlocks);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(608, 752);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(608, 752);
             this.Name = "findeNemo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finde Nemo";
             this.Load += new System.EventHandler(this.findeNemo_Load);
             this.ResumeLayout(false);
