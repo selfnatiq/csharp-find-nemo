@@ -204,36 +204,11 @@ namespace findeNemo
             //Disable the following buttons
             btnStart.Enabled = false;
             btnStop.Enabled = false;
+            btnRestart.Enabled = true;
 
             //Echo message why?
             echoMessage("Du hast das falsche Feld geklickt - Die Spielrunde ist vorüber.\nDu hast " + points.ToString() + " Punkte und eine Geschwindigkeit von " + gameSpeed.ToString() + " erreicht");
         }
-
-        /// <summary>
-        /// This method will check if the button hits panel bottom, then game will stop
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void checkBtn(object sender, EventArgs e)
-        {
-            //Checking if Red button touched the bottom of the panel
-            if (Color.Red == (sender as Button).BackColor && (sender as Button).Top > pnlBlocks.Height)
-            {
-                //if yes stop the timer
-                tmrGame.Stop();
-
-                //Disable the buttons from preventing to click and points adding
-                disableBtn();
-                
-                //Disable or enables the buttons
-                btnStop.Enabled = false;
-                btnRestart.Enabled = true;
-
-                //Echo message why?
-                echoMessage("Du hast in der untersten Reihe nicht geklickt - Die Spielrunde ist vorüber.\nDu hast " + points.ToString() + " Punkte und eine Geschwindigkeit von " + gameSpeed.ToString() + " erreicht");
-            }
-        }
-
 
         /// <summary>
         /// This method generates row of buttons in panel
@@ -298,7 +273,6 @@ namespace findeNemo
             btn.Location = new Point(i * (pnlBlocks.Width / 4), btnY);
             btn.BackColor = redBtn ? Color.Red : Color.CadetBlue;            
             btn.Click += redBtn ? new EventHandler(this.redBtn_Click) : new EventHandler(this.greenBtn_Click);
-            btn.LocationChanged += new EventHandler(this.checkBtn);
 
             //Returns the button
             return btn;
@@ -314,6 +288,24 @@ namespace findeNemo
             {
                 //Change Y location each button
                 btn.Top = btn.Location.Y + 50 / smoothness;
+
+                //Checking if red button touched the bottom of the panel
+                if (Color.Red.Equals(btn.BackColor) && btn.Top > pnlBlocks.Height)
+                {
+                    //if yes stop the timer
+                    tmrGame.Stop();
+
+                    //Disable the buttons from preventing to click and points adding
+                    disableBtn();
+
+                    //Disable or enables the buttons
+                    btnStop.Enabled = false;
+                    btnRestart.Enabled = true;
+
+                    //Echo message why?
+                    echoMessage("Du hast in der untersten Reihe nicht geklickt - Die Spielrunde ist vorüber.\nDu hast " + points.ToString() + " Punkte und eine Geschwindigkeit von " + gameSpeed.ToString() + " erreicht");
+                }
+
             }
         }
 
@@ -346,16 +338,17 @@ namespace findeNemo
         private void controlSpeed()
         {
             //Increment the speed
-            gameSpeed++;
+            gameSpeed += 2;
 
             //If speed is 100 or more and Timer tick value = 20, this is the max speed
             if (gameSpeed >= 100)
             {
                 tmrGame.Interval = 20;
+                gameSpeed = 100;
             }
             else 
             {
-                tmrGame.Interval = 120 - gameSpeed;
+                tmrGame.Interval = 100 - gameSpeed;
             }
 
             //Hide speed label, if speed is 0
@@ -370,6 +363,7 @@ namespace findeNemo
 
                 //show the speed in panel speed
                 lblSpeed.Width = pnlSpeed.Width / 100 * gameSpeed;
+
                 //with speed counter
                 lblSpeed.Text = gameSpeed.ToString();
             }
